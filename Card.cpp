@@ -4,6 +4,14 @@
 
 #include "Card.h"
 
-Card::Card(int cardNumber) {
-    num = cardNumber;
+Card::Card(int n) {
+    cardNumber = n;
+}
+
+int Card::getCardNumber() {
+    return num;
+}
+
+void Card::setCardNumber(int n) {
+    cardNumber = n;
 }

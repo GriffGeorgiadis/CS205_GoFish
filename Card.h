@@ -9,7 +9,7 @@
 
 class Card {
 private:
-    int num;
+    int cardNumber;
 
 public:
     /*
@@ -18,4 +18,14 @@ public:
      * 1 = Ace, 2-10 = Normal, 11 = Jack, 12 = Queen, 13 = King
      */
     Card(int n);
+
+    /*
+     * Get card's number value
+     */
+    int getCardNumber();
+
+    /*
+     * Set card's number value (not necessarily needed)
+     */
+    void setCardNumber(int n);
 };
