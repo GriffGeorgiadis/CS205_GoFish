@@ -7,9 +7,12 @@
 
 #endif //CS205_GOFISH_CARD_H
 
+enum Suit {hearts, diamonds, spades, clubs};
+
 class Card {
 private:
-    int cardNumber;
+    int rank;
+    Suit suit;
 
 public:
     /*
@@ -17,15 +20,30 @@ public:
      * and sets the integer num variable
      * 1 = Ace, 2-10 = Normal, 11 = Jack, 12 = Queen, 13 = King
      */
-    Card(int n);
+    Card(int r, Suit s);
 
     /*
      * Get card's number value
      */
-    int getCardNumber();
+    int getRank();
 
     /*
      * Set card's number value (not necessarily needed)
      */
-    void setCardNumber(int n);
+    void setRank(int r);
+
+    /*
+     * Get card's suit value
+     */
+    Suit getSuit();
+
+    /*
+     * Set suit value
+     */
+    void setSuit(Suit s);
+
+    /*
+     * Converts all card's to a string value
+     */
+    string toString();
 };
