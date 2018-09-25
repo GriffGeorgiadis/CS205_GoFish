@@ -5,7 +5,11 @@
 #ifndef CS205_GOFISH_CARD_H
 #define CS205_GOFISH_CARD_H
 
-#endif //CS205_GOFISH_CARD_H
+#include <string>
+#include <cstring>
+using namespace std;
+
+
 
 enum Suit {hearts, diamonds, spades, clubs};
 
@@ -47,3 +51,5 @@ public:
      */
     string toString();
 };
+
+#endif //CS205_GOFISH_CARD_H

@@ -3,6 +3,9 @@
 //
 
 #include "Card.h"
+#include <string>
+#include <cstring>
+using namespace std;
 
 Card::Card(int r, Suit s) {
     rank = r;
