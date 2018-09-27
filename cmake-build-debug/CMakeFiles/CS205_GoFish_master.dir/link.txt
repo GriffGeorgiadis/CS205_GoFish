@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/CS205_GoFish_master.dir/src/main.cpp.o CMakeFiles/CS205_GoFish_master.dir/src/card.cpp.o CMakeFiles/CS205_GoFish_master.dir/src/player.cpp.o  -o CS205_GoFish_master.exe -Wl,--out-implib,libCS205_GoFish_master.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

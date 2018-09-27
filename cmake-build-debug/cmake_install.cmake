@@ -1,4 +1,4 @@
-# Install script for directory: /Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master
+# Install script for directory: /cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,5 +35,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

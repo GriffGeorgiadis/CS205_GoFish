@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/bin/cmake
+CMAKE_COMMAND = /cygdrive/c/Users/Robbie/.CLion2017.2/system/cygwin_cmake/bin/cmake.exe
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
+RM = /cygdrive/c/Users/Robbie/.CLion2017.2/system/cygwin_cmake/bin/cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master
+CMAKE_SOURCE_DIR = /cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug
+CMAKE_BINARY_DIR = /cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cm
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/cygdrive/c/Users/Robbie/.CLion2017.2/system/cygwin_cmake/bin/cmake.exe -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/cygdrive/c/Users/Robbie/.CLion2017.2/system/cygwin_cmake/bin/cmake.exe -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug/CMakeFiles /Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug/CMakeFiles /cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,32 +123,86 @@ CS205_GoFish_master/fast:
 	$(MAKE) -f CMakeFiles/CS205_GoFish_master.dir/build.make CMakeFiles/CS205_GoFish_master.dir/build
 .PHONY : CS205_GoFish_master/fast
 
-src/gofish205.o: src/gofish205.cpp.o
+src/card.o: src/card.cpp.o
 
-.PHONY : src/gofish205.o
+.PHONY : src/card.o
 
 # target to build an object file
-src/gofish205.cpp.o:
-	$(MAKE) -f CMakeFiles/CS205_GoFish_master.dir/build.make CMakeFiles/CS205_GoFish_master.dir/src/gofish205.cpp.o
-.PHONY : src/gofish205.cpp.o
+src/card.cpp.o:
+	$(MAKE) -f CMakeFiles/CS205_GoFish_master.dir/build.make CMakeFiles/CS205_GoFish_master.dir/src/card.cpp.o
+.PHONY : src/card.cpp.o
 
-src/gofish205.i: src/gofish205.cpp.i
+src/card.i: src/card.cpp.i
 
-.PHONY : src/gofish205.i
+.PHONY : src/card.i
 
 # target to preprocess a source file
-src/gofish205.cpp.i:
-	$(MAKE) -f CMakeFiles/CS205_GoFish_master.dir/build.make CMakeFiles/CS205_GoFish_master.dir/src/gofish205.cpp.i
-.PHONY : src/gofish205.cpp.i
+src/card.cpp.i:
+	$(MAKE) -f CMakeFiles/CS205_GoFish_master.dir/build.make CMakeFiles/CS205_GoFish_master.dir/src/card.cpp.i
+.PHONY : src/card.cpp.i
 
-src/gofish205.s: src/gofish205.cpp.s
+src/card.s: src/card.cpp.s
 
-.PHONY : src/gofish205.s
+.PHONY : src/card.s
 
 # target to generate assembly for a file
-src/gofish205.cpp.s:
-	$(MAKE) -f CMakeFiles/CS205_GoFish_master.dir/build.make CMakeFiles/CS205_GoFish_master.dir/src/gofish205.cpp.s
-.PHONY : src/gofish205.cpp.s
+src/card.cpp.s:
+	$(MAKE) -f CMakeFiles/CS205_GoFish_master.dir/build.make CMakeFiles/CS205_GoFish_master.dir/src/card.cpp.s
+.PHONY : src/card.cpp.s
+
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/CS205_GoFish_master.dir/build.make CMakeFiles/CS205_GoFish_master.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/CS205_GoFish_master.dir/build.make CMakeFiles/CS205_GoFish_master.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/CS205_GoFish_master.dir/build.make CMakeFiles/CS205_GoFish_master.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
+src/player.o: src/player.cpp.o
+
+.PHONY : src/player.o
+
+# target to build an object file
+src/player.cpp.o:
+	$(MAKE) -f CMakeFiles/CS205_GoFish_master.dir/build.make CMakeFiles/CS205_GoFish_master.dir/src/player.cpp.o
+.PHONY : src/player.cpp.o
+
+src/player.i: src/player.cpp.i
+
+.PHONY : src/player.i
+
+# target to preprocess a source file
+src/player.cpp.i:
+	$(MAKE) -f CMakeFiles/CS205_GoFish_master.dir/build.make CMakeFiles/CS205_GoFish_master.dir/src/player.cpp.i
+.PHONY : src/player.cpp.i
+
+src/player.s: src/player.cpp.s
+
+.PHONY : src/player.s
+
+# target to generate assembly for a file
+src/player.cpp.s:
+	$(MAKE) -f CMakeFiles/CS205_GoFish_master.dir/build.make CMakeFiles/CS205_GoFish_master.dir/src/player.cpp.s
+.PHONY : src/player.cpp.s
 
 # Help Target
 help:
@@ -159,9 +213,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... CS205_GoFish_master"
-	@echo "... src/gofish205.o"
-	@echo "... src/gofish205.i"
-	@echo "... src/gofish205.s"
+	@echo "... src/card.o"
+	@echo "... src/card.i"
+	@echo "... src/card.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... src/player.o"
+	@echo "... src/player.i"
+	@echo "... src/player.s"
 .PHONY : help
 
 

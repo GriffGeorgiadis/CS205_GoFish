@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/src/Card.h
+string
+-
+cstring
+-
+
+/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/src/card.cpp
+Card.h
+/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/src/Card.h
+string
+-
+cstring
+-
+
+/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/src/main.cpp
+Card.h
+/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/src/Card.h
+fstream
+-
+iomanip
+-
+iostream
+-
+string
+-
+vector
+-
+
+/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/src/player.cpp
+player.h
+/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/src/player.h
+vector
+-
+
+/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/src/player.h
+vector
+-
+

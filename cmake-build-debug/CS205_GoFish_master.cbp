@@ -8,84 +8,94 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug"/>
+				<Option working_dir="/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug"/>
+				<Option working_dir="/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug"/>
+				<Option working_dir="/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="CS205_GoFish_master">
-				<Option output="/Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug/CS205_GoFish_master" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug"/>
+				<Option output="/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug/CS205_GoFish_master.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/9.1.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/../../../../lib/../include/w32api"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 CS205_GoFish_master"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug/Makefile&quot;  VERBOSE=1 CS205_GoFish_master"/>
+					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="CS205_GoFish_master/fast">
-				<Option output="/Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug/CS205_GoFish_master" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug"/>
+				<Option output="/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug/CS205_GoFish_master.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/9.1.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/../../../../lib/../include/w32api"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 CS205_GoFish_master/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug/Makefile&quot;  VERBOSE=1 CS205_GoFish_master/fast"/>
+					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/src/gofish205.cpp">
+		<Unit filename="/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/src/card.cpp">
 			<Option target="CS205_GoFish_master"/>
 		</Unit>
-		<Unit filename="/Users/GriffinGeorgiadis/CLionProjects/CS205_GoFish-master/CMakeLists.txt">
+		<Unit filename="/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/src/card.h">
+			<Option target="CS205_GoFish_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/src/main.cpp">
+			<Option target="CS205_GoFish_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/src/player.cpp">
+			<Option target="CS205_GoFish_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/src/player.h">
+			<Option target="CS205_GoFish_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
