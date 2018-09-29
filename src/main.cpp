@@ -1,7 +1,4 @@
-//
-// Created by Devon on 9/23/2018.
-//
-
+#include <iostream>
 #include "Card.h"
 #include <fstream>
 #include <iomanip>
@@ -38,6 +35,7 @@ int main() {
     int deckSize = Deck.size();
     int cardNum;
     int compLie;
+    ofstream outFile("Game Record.txt");
 
     for (int j = 0; j < 7; ++j) {
         cardNum = rand() % (deckSize-1);
@@ -68,32 +66,10 @@ int main() {
         cout << computerHand[k].toString() << endl;
     }
     cout << endl;
-    cout << "Deck: " << endl;
-    for (int l = 0; l < Deck.size(); ++l) {
-        cout << Deck[l].toString() << endl;
-    }
-    
-    // all of this can be in the game loop
-    // so every turn will record player's guesses
-    // and their hands of cards
-    ofstream outFile = "Game Record.txt";
-
-    if(outFile) {
-        // output player's hand
-        for(Card playerCard : playerHand) {
-            outFile << "Player's Hand:" << endl;
-            outFile << playerCard.toString() << endl;
-        }
-        // output computer's hand
-        for(Card computerCard : computerHand) {
-            outFile << "Computer's Hand:" << endl;
-            outFile << computerCard.toString() << endl;
-        }
-        // output player's guess
-        outFile << "Player's Guess: " << playerGuess << endl;
-        // output computer's guess
-        outFile << "Computer's Guess: " << computerGuess << endl;
-    }
+//    cout << "Deck: " << endl;
+//    for (int l = 0; l < Deck.size(); ++l) {
+//        cout << Deck[l].toString() << endl;
+//    }
 
     //Main game loop
     Card ask(1, hearts); //temp card
@@ -115,9 +91,19 @@ int main() {
             cin >> playerAsk;
             //make sure the player has the card
 
-
             //player asks
             cout << "Do you have any " << playerAsk << "'s?" << endl;
+
+            if(outFile) {
+                // output player's hand
+                outFile << "Player's Hand:" << endl;
+                for(Card playerCard : playerHand) {
+                    outFile << playerCard.toString() << endl;
+                }
+                // output player's guess
+                outFile << "Player's Guess: " << playerAsk << endl;
+            }
+
 
             //make sure its in players hand
             //check if computer has it
@@ -153,7 +139,7 @@ int main() {
                 //delete from deck
             }
             //check if the card picked up is the card asked for
-            if (pickUp.getRank() == ask.getRank()) {
+            if (pickUp.getRank() == playerAsk) {
                 cout << "Picked up the right card. Player turn continues." << endl;
                 playerTurn = true;
 
@@ -168,6 +154,16 @@ int main() {
             int compAsk = rand() % computerHand.size();
             ask = computerHand[compAsk];
             cout << "Do you have any " << ask.getRank() << "'s?" << endl;
+
+            if(outFile) {
+                // output computer's hand
+                outFile << "Computer's Hand:" << endl;
+                for(Card computerCard : computerHand) {
+                    outFile << computerCard.toString() << endl;
+                }
+                // output computer's guess
+                outFile << "Computer's Guess: " << ask.toString() << endl;
+            }
 
             //check if player has
             //ask player (let them lie)
@@ -230,8 +226,6 @@ int main() {
 
         }
     }
-
-    outFile.close();
 
     return 0;
 }

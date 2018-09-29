@@ -1,10 +1,8 @@
 //
-// Created by Devon on 9/6/2018.
+// Created by Devon on 9/29/2018.
 //
 
 #include "Card.h"
-#include <string>
-#include <cstring>
 using namespace std;
 
 Card::Card(int r, Suit s) {

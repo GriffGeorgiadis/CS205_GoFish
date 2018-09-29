@@ -1,15 +1,13 @@
 //
-// Created by Devon on 9/6/2018.
+// Created by Devon on 9/29/2018.
 //
 
-#ifndef CS205_GOFISH_CARD_H
-#define CS205_GOFISH_CARD_H
+#ifndef GO_FISH_CARD_H
+#define GO_FISH_CARD_H
 
 #include <string>
 #include <cstring>
 using namespace std;
-
-
 
 enum Suit {hearts, diamonds, spades, clubs};
 
@@ -52,4 +50,4 @@ public:
     string toString();
 };
 
-#endif //CS205_GOFISH_CARD_H
+#endif //GO_FISH_CARD_H

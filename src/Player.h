@@ -1,17 +1,18 @@
 //
-// Created by Griffin Georgiadis on 9/25/18.
+// Created by Devon on 9/29/2018.
 //
 
-#ifndef CS205_GOFISH_MASTER_PLAYER_H
-#define CS205_GOFISH_MASTER_PLAYER_H
-
-#endif //CS205_GOFISH_MASTER_PLAYER_H
+#ifndef GO_FISH_PLAYER_H
+#define GO_FISH_PLAYER_H
 
 using namespace std;
 
 #include <vector>
+#include <string>
+#include <cstring>
+#include <iostream>
 
-class {
+class Player {
 
 public:
 
@@ -19,7 +20,7 @@ public:
      * default constructor
      *
      */
-    player();
+    Player();
 
 
     /**
@@ -33,7 +34,7 @@ public:
      * places card
      *
      */
-    void giveCard();
+    void placeCard();
 
     /**
      * ask for card
@@ -50,9 +51,7 @@ public:
      *  score keeper
      *
      */
-    int book(books);
-
-
+    int book();
 
 protected:
 
@@ -64,3 +63,5 @@ private:
 
 
 };
+
+#endif //GO_FISH_PLAYER_H
