@@ -4,6 +4,6 @@ project(CS205_GoFish_master)
 set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES
-        src/main.cpp src/card.cpp src/card.h src/player.cpp src/player.h)
+        src/main.cpp src/Card.cpp src/Card.h src/Player.cpp src/Player.h)
 
 add_executable(CS205_GoFish_master ${SOURCE_FILES})
