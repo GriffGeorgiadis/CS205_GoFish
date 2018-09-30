@@ -1,5 +1,11 @@
-#include <iostream>
+//
+// Created by Devon on 9/29/2018.
+//
+
 #include "Card.h"
+#include "Deck.h"
+#include "Player.h"
+#include <iostream>
 #include <fstream>
 #include <iomanip>
 #include <iostream>
@@ -7,223 +13,148 @@
 #include <vector>
 using namespace std;
 
-int main() {
-    vector<Card>Deck;
-    vector<Card>playerHand;
-    vector<Card>computerHand;
-
-    Card s(1,spades);
-    Card d(1,diamonds);
-    Card c(1,clubs);
-    Card h(1,spades);
-
-    for (int i = 1; i <= 13 ; ++i) {
-        s.setRank(i);
-        d.setRank(i);
-        c.setRank(i);
-        h.setRank(i);
-        s.setSuit(spades);
-        d.setSuit(diamonds);
-        c.setSuit(clubs);
-        h.setSuit(hearts);
-        Deck.push_back(s);
-        Deck.push_back(d);
-        Deck.push_back(c);
-        Deck.push_back(h);
+int main () {
+    // create the deck (already shuffled) and new players
+    Deck deck;
+    Player user(deck);
+    for (int i = 0; i < 7; ++i) {
+        deck.removeTopCard();
     }
 
-    int deckSize = Deck.size();
-    int cardNum;
-    int compLie;
-    ofstream outFile("Game Record.txt");
-
-    for (int j = 0; j < 7; ++j) {
-        cardNum = rand() % (deckSize-1);
-        playerHand.push_back(Deck[cardNum]);
-        deckSize = deckSize - 1;
-        Deck.erase(Deck.begin()+cardNum);
-        cardNum = rand() % (deckSize-1);
-        computerHand.push_back(Deck[cardNum]);
-        deckSize = deckSize - 1;
-        Deck.erase(Deck.begin()+cardNum);
+    Player computer(deck);
+    for (int i = 0; i < 7; ++i) {
+        deck.removeTopCard();
     }
 
-    cout <<"Select an honesty level for your opponent 1-100:" << endl;
-    cin >> compLie;
-    while (compLie > 100 || compLie < 0){
-        cout << "Please enter a value from 1-100:" << endl;
-        cin >> compLie;
-    }
-
-
-    cout << "Player Hand: " << endl;
-    for (int k = 0; k < playerHand.size(); ++k) {
-        cout << playerHand[k].toString() << endl;
-    }
+    // main menu
     cout << endl;
-    cout << "Computer Hand: " << endl;
-    for (int k = 0; k < computerHand.size(); ++k) {
-        cout << computerHand[k].toString() << endl;
-    }
+    cout << "Welcome to Go Fish!" << endl;
+    cout << "Please choose a difficulty to play on" << endl;
     cout << endl;
-//    cout << "Deck: " << endl;
-//    for (int l = 0; l < Deck.size(); ++l) {
-//        cout << Deck[l].toString() << endl;
-//    }
+    cout << "E = Easy, H = Hard" << endl;
+    string difficulty;
+    cin >> difficulty;
+    while (difficulty != "E" && difficulty != "e" && difficulty != "H" && difficulty != "e") {
+        cout << endl;
+        cout << "Difficulty not found, please try again!" << endl;
+        cout << "E = Easy, H = Hard" << endl;
+        cin >> difficulty;
+    }
 
-    //Main game loop
-    Card ask(1, hearts); //temp card
-    bool hasCard;
-    bool playerTurn;
-    bool compTurn;
-    while(playerHand.size() != 0 || computerHand.size()!= 0 || deckSize != 0){
-       //loop for players turn
-        playerTurn = true;
+    // main game loop
+    while (user.getHand().size() > 0 || computer.getHand().size() > 0 || deck.getDeck().size() > 0) {
+        // differentiate between easy and hard difficulty (easy = no memory/lying, hard = memory/lying)
+        if (difficulty == "E" || difficulty == "e") {
+            // always check to see if user or computer has a book to start
+            for (int i = 0; i < user.getHand().size(); ++i) {
+                // if there is a book add point and remove cards
 
-        while(playerTurn) {
-            //show players hand
-            cout << "Player's Hand:" << endl;
-            for(Card playerCard : playerHand) {
-                cout << playerCard.toString() << endl;
             }
-            int playerAsk;
-            cout << "Enter the rank of the card you would like to ask for: " << endl;
-            cin >> playerAsk;
-            //make sure the player has the card
+            for (int i = 0; i < computer.getHand().size(); ++i) {
+                // if there is a book add point and remove cards
 
-            //player asks
-            cout << "Do you have any " << playerAsk << "'s?" << endl;
+            }
 
-            if(outFile) {
-                // output player's hand
-                outFile << "Player's Hand:" << endl;
-                for(Card playerCard : playerHand) {
-                    outFile << playerCard.toString() << endl;
+            // print out hand and points
+            cout << "Score (you vs. comp): " << user.getPoints() << " - " << computer.getPoints() << endl;
+            cout << "Your Hand: " << endl;
+            user.printHand();
+            cout << endl;
+            cout << "Comptuer's Hand: " << endl;
+            computer.printHand();
+            cout << endl;
+
+            // ask for user's choice
+            cout << "A = Ask, Q = Quit" << endl;
+            string choice;
+            cin >> choice;
+            while (choice != "A" && choice != "a" && choice != "Q" && choice != "q") {
+                cout << endl;
+                cout << "Option not found, please try again!" << endl;
+                cout << "A = Ask, Q = Quit" << endl;
+                cin >> choice;
+            }
+
+            // ask for choices
+            if (choice == "A" || choice == "a") {
+                cout << "What are you looking for? (1 = Ace, 2-10, 11 = Jack, 12 = Queen, 13 = King" << endl;
+                int guess;
+                cin >> guess;
+                while (guess < 1 || guess > 13) {
+                    cout << endl;
+                    cout << "Non existent card, please try again!" << endl;
+                    cout << "1 = Ace" << endl;
+                    cout << "2-10 = Normal Cards" << endl;
+                    cout << "11 = Jack" << endl;
+                    cout << "12 = Queen" << endl;
+                    cout << "13 = King" << endl;
+                    cin >> guess;
                 }
-                // output player's guess
-                outFile << "Player's Guess: " << playerAsk << endl;
-            }
 
+                // run through computer's hand to see if they have any of those cards
+                vector<Card> cardsWithThatRank;
+                vector<int> indexWhereCardsAre;
+                bool compHasCard = false;
+                for (int i = 0; i < computer.getHand().size(); ++i) {
+                    if (computer.getHand()[i].getRank() == guess) {
+                        cardsWithThatRank.push_back(computer.getHand()[i]);
+                        indexWhereCardsAre.push_back(i);
+                        compHasCard = true;
+                    }
+                }
 
-            //make sure its in players hand
-            //check if computer has it
-            for (int i = 0; i < computerHand.size(); ++i) {
-                if (computerHand[i].getRank() == ask.getRank()) {
-                    hasCard = true;
+                if (compHasCard) {
+                    cout << "Computer has " << cardsWithThatRank.size() << " of those card(s)" << endl;
+                    cout << "They have now been added to your hand" << endl;
+
+                    // push back all cards with that rank
+                    for (int i = 0; i < cardsWithThatRank.size(); ++i) {
+                        user.addCard(cardsWithThatRank[i]);
+                    }
+                    // also remove card(s) from the computer's hand
+                    int iterations = 0;
+                    for (int j = 0; j < indexWhereCardsAre.size(); ++j) {
+                        if (iterations == 0) {
+                            computer.removeCard(indexWhereCardsAre[j]);
+                            ++iterations;
+                        } else {
+                            computer.removeCard(indexWhereCardsAre[j]-1);
+                        }
+                    }
+                    // clear the two vectors necessary above
+                    cardsWithThatRank.clear();
+                    indexWhereCardsAre.clear();
                 } else {
-                    playerTurn = false;
+                    cout << "Go Fish!" << endl;
+                    // push back top card, and remove from deck
+                    user.getHand().push_back(deck.getDeck()[0]);
+                    deck.removeTopCard();
                 }
-            }
-            //decide if computer will lie
-            //pick random number 0-100
-            int pick = rand() % 100 +1;
-            if (pick > compLie) {
-                cout << "Go fish!" << endl;
-                hasCard = false;
-            }
-            if (hasCard) {
-                cout << "Yes, here they are." << endl;
-                playerHand.push_back(ask);
-                //delete from comp hand
-            }
+            } else {
+                    cout << "Bye!" << endl;
+                    return 0;
+                }
 
-            //check for book
-            for (int i = 0; i < playerHand.size(); ++i) {
-                //look for 4 of a kind
 
-            }
-            //pick up if computer doesnt have
-            Card pickUp = Deck[0];
-            if (!hasCard) {
-                playerHand.push_back(pickUp);
-                //delete from deck
-            }
-            //check if the card picked up is the card asked for
-            if (pickUp.getRank() == playerAsk) {
-                cout << "Picked up the right card. Player turn continues." << endl;
-                playerTurn = true;
+        } else if (difficulty == "H" || difficulty == "h") {
 
-            }
         }
+    }
 
-//   ========================= start comp turn =================================
-
-        compTurn = true;
-        while (compTurn) {
-            //computer asks
-            int compAsk = rand() % computerHand.size();
-            ask = computerHand[compAsk];
-            cout << "Do you have any " << ask.getRank() << "'s?" << endl;
-
-            if(outFile) {
-                // output computer's hand
-                outFile << "Computer's Hand:" << endl;
-                for(Card computerCard : computerHand) {
-                    outFile << computerCard.toString() << endl;
-                }
-                // output computer's guess
-                outFile << "Computer's Guess: " << ask.toString() << endl;
-            }
-
-            //check if player has
-            //ask player (let them lie)
-            bool willLie = false;
-            for (int i = 0; i < playerHand.size(); ++i) {
-                if (playerHand[i].getRank() == ask.getRank()) {
-                    cout << "Would you like to lie? Y or N: " << endl;
-                    string lie;
-                    cin >> lie;
-                    while (lie != "Y" || lie != "y" || lie != "N" || lie != "n"){
-                        cout << "Please enter Y or N: " << endl;
-                        cin >> lie;
-                    }
-                    if (lie == "y" || lie == "Y"){
-                        cout << "Go fish!" << endl;
-                        willLie = true;
-                        hasCard = false;
-                    }else{
-                        cout << "Yes, here they are." << endl;
-                        hasCard = true;
-                    }
-                } else {
-                    compTurn = false;
-                }
-            }
-
-            //decide if computer will call out lie
-            // pick random number 0-100
-            if(hasCard && willLie){
-                int pick = rand() % 100 +1;
-
-                if (pick > compLie) {
-                    cout << "You are lying!" << endl;
-                    hasCard = true;
-                }
-            }
-
-            if (hasCard) {
-                computerHand.push_back(ask);
-                //delete from player hand
-            }
-
-            //check for book
-            for (int i = 0; i < computerHand.size(); ++i) {
-                //look for 4 of a kind
-
-            }
-            //pick up if computer doesnt have
-            Card pickUp = Deck[0];
-            if (!hasCard) {
-                computerHand.push_back(pickUp);
-                //delete from deck
-            }
-            //check if the card picked up is the card asked for
-            if (pickUp.getRank() == ask.getRank()) {
-                cout << "Picked up the right card. Computer turn continues." << endl;
-                compTurn = true;
-
-            }
-
+    // write to console who won
+    if (user.getHand().size() == 0) {
+        cout << "Congratulations you won!" << endl;
+        cout << "Score: " << user.getPoints() << " - " << computer.getPoints() << endl;
+    } else if (computer.getHand().size() == 0) {
+        cout << "Unfortunately you lost" << endl;
+        cout << "Score: " << user.getPoints() << " - " << computer.getPoints() << endl;
+    } else {
+        if (user.getPoints() > computer.getPoints()) {
+            cout << "Congratulations you won!" << endl;
+            cout << "Score: " << user.getPoints() << " - " << computer.getPoints() << endl;
+        } else {
+            cout << "Unfortunately you lost" << endl;
+            cout << "Score: " << user.getPoints() << " - " << computer.getPoints() << endl;
         }
     }
 

@@ -2,66 +2,56 @@
 // Created by Devon on 9/29/2018.
 //
 
-#ifndef GO_FISH_PLAYER_H
-#define GO_FISH_PLAYER_H
+#ifndef CS205_GOFISH_MASTER_PLAYER_H
+#define CS205_GOFISH_MASTER_PLAYER_H
 
+#include "Card.h"
+#include "Deck.h"
+#include <string>
+#include <vector>
+#include <iostream>
 using namespace std;
 
-#include <vector>
-#include <string>
-#include <cstring>
-#include <iostream>
-
 class Player {
+private:
+    vector<Card> hand;
+    int points = 0;
 
 public:
-
-    /**
-     * default constructor
-     *
+    /*
+     * Creates a new player and makes their hand when passed in a deck
      */
-    Player();
+    Player(Deck deck);
 
-
-    /**
-     * Player draw action
-     *
+    /*
+     * Add a card to player's hand
      */
-    void draw();
+    void addCard(Card card);
 
-
-    /**
-     * places card
-     *
+    /*
+     * Remove card from player's hand at specific index
      */
-    void placeCard();
+    void removeCard(int index);
 
-    /**
-     * ask for card
-     *
+    /*
+     * Returns player's hand
      */
-    void ask();
+    vector<Card> getHand();
 
-    /**
-     *  respond to ask
+    /*
+     * Prints the current player's hand
      */
-    void respond();
+    void printHand();
 
-    /**
-     *  score keeper
-     *
+    /*
+     * Adds a point whenever a book is found
      */
-    int book();
+    void addPoint();
 
-protected:
-
-private:
-
-    vector<int> playerHand;
-    int books = 0;
-
-
-
+    /*
+     * returns player's points
+     */
+    int getPoints();
 };
 
-#endif //GO_FISH_PLAYER_H
+#endif //CS205_GOFISH_MASTER_PLAYER_H

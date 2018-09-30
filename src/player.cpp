@@ -1,42 +1,37 @@
 //
-// Created by Griffin Georgiadis on 9/25/18.
+// Created by Devon on 9/29/2018.
 //
 
-#include "player.h"
-#include <vector>
+#include "Player.h"
 
-player::player(){
-
+Player::Player(Deck deck) {
+    for (int i = 0; i < 7; ++i) {
+        hand.push_back(deck.getDeck()[i]);
+    }
 }
 
-
-
-
-
-//draw card from deck
-void player::draw(){
-
+void Player::addCard(Card card) {
+    hand.push_back(card);
 }
 
-//gives card to other player
-void player::placeCard(){
-
+void Player::removeCard(int index) {
+    hand.erase(hand.begin() + index);
 }
 
-//asks for a card
-void player::ask(){
-    cout << "Do you have any: " << endl;
-
+vector<Card> Player::getHand() {
+    return hand;
 }
 
-//responds when asked for card
-void player::respond(){
-
-
+void Player::printHand() {
+    for (int i = 0; i < hand.size(); ++i) {
+        cout << hand[i].toString() << endl;
+    }
 }
 
-//number of books that player has aka score
-int player::book(books){
+void Player::addPoint() {
+    points++;
+}
 
-
+int Player::getPoints() {
+    return points;
 }
