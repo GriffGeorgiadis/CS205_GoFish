@@ -129,9 +129,9 @@ int main () {
                             outFile << playerCard.toString() << endl;
                         }
                         // output player's guess
-                        outFile << "====================" << endl;
+                        outFile << "======================" << endl;
                         outFile << "Player's Guess Rank: " << guess << endl;
-                        outFile << "====================" << endl;
+                        outFile << "======================" << endl;
                     }
 
                     // run through computer's hand to see if they have any of those cards
@@ -216,9 +216,9 @@ int main () {
                         outFile << computerCard.toString() << endl;
                     }
                     // output computer's guess
-                    outFile << "======================" << endl;
+                    outFile << "========================" << endl;
                     outFile << "Computer's Guess Rank: " << randomRank << endl;
-                    outFile << "======================" << endl;
+                    outFile << "========================" << endl;
                 }
 
                 // run through user's hand to see if they have any of those cards
@@ -357,9 +357,9 @@ int main () {
                             outFile << playerCard.toString() << endl;
                         }
                         // output player's guess
-                        outFile << "====================" << endl;
+                        outFile << "======================" << endl;
                         outFile << "Player's Guess Rank: " << guess << endl;
-                        outFile << "====================" << endl;
+                        outFile << "======================" << endl;
                     }
 
                     // run through computer's hand to see if they have any of those cards
@@ -469,9 +469,9 @@ int main () {
                         outFile << computerCard.toString() << endl;
                     }
                     // output computer's guess
-                    outFile << "======================" << endl;
+                    outFile << "========================" << endl;
                     outFile << "Computer's Guess Rank: " << guess << endl;
-                    outFile << "======================" << endl;
+                    outFile << "========================" << endl;
                 }
 
                 // run through user's hand to see if they have any of those cards
