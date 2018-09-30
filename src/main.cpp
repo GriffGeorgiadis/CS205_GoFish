@@ -83,13 +83,13 @@ int main () {
 
                 // ask for choices
                 if (choice == "A" || choice == "a") {
-                    cout << "What are you looking for? (1 = Ace, 2-10, 11 = Jack, 12 = Queen, 13 = King" << endl;
+                    cout << "What are you looking for? (1 = Ace, 2-10, 11 = Jack, 12 = Queen, 13 = King)" << endl;
                     int guess;
                     cin >> guess;
                     while (guess < 1 || guess > 13) {
                         cout << endl;
                         cout << "Non existent card, please try again!" << endl;
-                        cout << "What are you looking for? (1 = Ace, 2-10, 11 = Jack, 12 = Queen, 13 = King" << endl;
+                        cout << "What are you looking for? (1 = Ace, 2-10, 11 = Jack, 12 = Queen, 13 = King)" << endl;
                         cin >> guess;
                     }
 
