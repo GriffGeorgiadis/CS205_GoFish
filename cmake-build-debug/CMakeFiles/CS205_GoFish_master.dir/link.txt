@@ -1,1 +1,3 @@
-/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/CS205_GoFish_master.dir/src/main.cpp.o CMakeFiles/CS205_GoFish_master.dir/src/card.cpp.o CMakeFiles/CS205_GoFish_master.dir/src/player.cpp.o  -o CS205_GoFish_master.exe -Wl,--out-implib,libCS205_GoFish_master.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+"C:\Program Files\JetBrains\CLion 2017.3.1\bin\cmake\bin\cmake.exe" -E remove -f CMakeFiles\CS205_GoFish_master.dir/objects.a
+C:\PROGRA~2\MINGW-~1\I686-7~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\CS205_GoFish_master.dir/objects.a @CMakeFiles\CS205_GoFish_master.dir\objects1.rsp
+C:\PROGRA~2\MINGW-~1\I686-7~1.0-P\mingw32\bin\G__~1.EXE -g   -Wl,--whole-archive CMakeFiles\CS205_GoFish_master.dir/objects.a -Wl,--no-whole-archive  -o CS205_GoFish_master.exe -Wl,--out-implib,libCS205_GoFish_master.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\CS205_GoFish_master.dir\linklibs.rsp

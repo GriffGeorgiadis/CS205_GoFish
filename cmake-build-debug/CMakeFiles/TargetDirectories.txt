@@ -1,3 +1,3 @@
-/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug/CMakeFiles/edit_cache.dir
-/cygdrive/c/Users/Robbie/CLionProjects/cs205goFish/CS205_GoFish/cmake-build-debug/CMakeFiles/CS205_GoFish_master.dir
+C:/Users/Devon/Desktop/CS205_GoFish/cmake-build-debug/CMakeFiles/CS205_GoFish_master.dir
+C:/Users/Devon/Desktop/CS205_GoFish/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Devon/Desktop/CS205_GoFish/cmake-build-debug/CMakeFiles/rebuild_cache.dir

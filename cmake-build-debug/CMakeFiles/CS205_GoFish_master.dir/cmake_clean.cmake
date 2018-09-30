@@ -1,9 +1,11 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/CS205_GoFish_master.dir/src/main.cpp.o"
-  "CMakeFiles/CS205_GoFish_master.dir/src/card.cpp.o"
-  "CMakeFiles/CS205_GoFish_master.dir/src/player.cpp.o"
+  "CMakeFiles/CS205_GoFish_master.dir/src/main.cpp.obj"
+  "CMakeFiles/CS205_GoFish_master.dir/src/Card.cpp.obj"
+  "CMakeFiles/CS205_GoFish_master.dir/src/Deck.cpp.obj"
+  "CMakeFiles/CS205_GoFish_master.dir/src/Player.cpp.obj"
   "CS205_GoFish_master.pdb"
   "CS205_GoFish_master.exe"
+  "CS205_GoFish_master.exe.manifest"
   "libCS205_GoFish_master.dll.a"
 )
 

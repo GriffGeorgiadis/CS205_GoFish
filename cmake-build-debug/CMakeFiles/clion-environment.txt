@@ -1,3 +1,4 @@
-ToolSet: 2.9.0@C:\cygwin64
+ToolSet: w64 5.0@C:\Program Files (x86)\mingw-w64\i686-7.2.0-posix-dwarf-rt_v5-rev1\mingw32
 Options: 
-CMake: 3.8.2@C:\Program Files\JetBrains\CLion 2017.2.2\bin\cmake_cygwin\bin\cmake.exe
+
+Options:
