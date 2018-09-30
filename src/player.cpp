@@ -18,6 +18,28 @@ void Player::removeCard(int index) {
     hand.erase(hand.begin() + index);
 }
 
+bool Player::checkBook() {
+    int count = 0;
+    for (int j = 0; j < hand.size(); ++j){
+        count = 0;
+        for(int i = 0; i < hand.size(); ++i){
+            if (hand.at(i).getRank() == j){
+                count++;
+            }
+            if (count == 4){
+                for (int k = 0; k < hand.size(); ++k){
+                    if (hand.at(k).getRank() == j){
+                        hand.erase(hand.begin() + k);
+                        k--;
+                        i--;
+                    }
+                }
+                return true;
+            }
+        }
+    }
+}
+
 vector<Card> Player::getHand() {
     return hand;
 }
@@ -34,4 +56,12 @@ void Player::addPoint() {
 
 int Player::getPoints() {
     return points;
+}
+
+bool Player::getTurn() {
+    return turn;
+}
+
+void Player::setTurn(bool t) {
+    turn = t;
 }

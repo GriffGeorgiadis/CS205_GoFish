@@ -16,6 +16,7 @@ class Player {
 private:
     vector<Card> hand;
     int points = 0;
+    bool turn = false;
 
 public:
     /*
@@ -32,6 +33,11 @@ public:
      * Remove card from player's hand at specific index
      */
     void removeCard(int index);
+
+    /*
+     * Check for a book in player's hand
+     */
+    bool checkBook();
 
     /*
      * Returns player's hand
@@ -52,6 +58,16 @@ public:
      * returns player's points
      */
     int getPoints();
+
+    /*
+     * returns bool value of if it's the player's turn or not
+     */
+    bool getTurn();
+
+    /*
+     * set player's turn value
+     */
+    void setTurn(bool t);
 };
 
 #endif //CS205_GOFISH_MASTER_PLAYER_H
