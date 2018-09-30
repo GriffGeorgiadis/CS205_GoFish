@@ -13,6 +13,7 @@
 #include <vector>
 #include <random>
 #include <ctime>
+#include <algorithm>
 using namespace std;
 
 int main () {
@@ -31,6 +32,8 @@ int main () {
     }
     ofstream outFile("Game Record.txt");
     bool setLying = false;
+    bool cardsInHand = false;
+    vector<int> computerMemory;
 
     // main menu
     user.setTurn(true);
@@ -95,6 +98,25 @@ int main () {
                         cout << "Non existent card, please try again!" << endl;
                         cout << "What are you looking for? (1 = Ace, 2-10, 11 = Jack, 12 = Queen, 13 = King)" << endl;
                         cin >> guess;
+                    }
+
+                    cardsInHand = false;
+                    // make sure card asked for is in player's hand
+                    for (int i = 0; i < user.getHand().size(); ++i) {
+                        if (user.getHand()[i].getRank() == guess) {
+                            cardsInHand = true;
+                        }
+                    }
+                    while (!cardsInHand) {
+                        cout << endl;
+                        cout << "Card must be in your hand to guess" << endl;
+                        cout << "What are you looking for? (1 = Ace, 2-10, 11 = Jack, 12 = Queen, 13 = King)" << endl;
+                        cin >> guess;
+                        for (int i = 0; i < user.getHand().size(); ++i) {
+                            if (user.getHand()[i].getRank() == guess) {
+                                cardsInHand = true;
+                            }
+                        }
                     }
 
                     // output file
@@ -167,6 +189,22 @@ int main () {
             } else if (computer.getTurn() == true && user.getTurn() == false) {
                 // pick a random card rank for computer
                 int randomRank = rand() % 13 + 1;
+
+                // make sure card randomized is in computer's hand
+                cardsInHand = false;
+                for (int i = 0; i < computer.getHand().size(); ++i) {
+                    if (randomRank == computer.getHand()[i].getRank()) {
+                        cardsInHand = true;
+                    }
+                }
+                while (!cardsInHand) {
+                    randomRank = rand() % 13 + 1;
+                    for (int i = 0; i < computer.getHand().size(); ++i) {
+                        if (randomRank == computer.getHand()[i].getRank()) {
+                            cardsInHand = true;
+                        }
+                    }
+                }
 
                 // output file
                 if(outFile) {
@@ -254,10 +292,6 @@ int main () {
                 setLying = true;
             }
 
-            // initialize the computer's memory vector of ranks
-            // everytime player guesses, append to computer's memory
-            vector<int> computerMemory;
-
             // print out hand and points
             cout << "============================" << endl;
             cout << "Score (you vs. comp): " << user.getPoints() << " - " << computer.getPoints() << endl;
@@ -266,7 +300,6 @@ int main () {
             cout << "==========" << endl;
             user.printHand();
             cout << endl;
-            computer.printHand();
 
             if (user.getTurn() == true && computer.getTurn() == false) {
                 // ask for user's choice
@@ -290,6 +323,25 @@ int main () {
                         cout << "Non existent card, please try again!" << endl;
                         cout << "What are you looking for? (1 = Ace, 2-10, 11 = Jack, 12 = Queen, 13 = King)" << endl;
                         cin >> guess;
+                    }
+
+                    // make sure card asked for is in player's hand
+                    cardsInHand = false;
+                    for (int i = 0; i < user.getHand().size(); ++i) {
+                        if (guess == user.getHand()[i].getRank()) {
+                            cardsInHand = true;
+                        }
+                    }
+                    while (!cardsInHand) {
+                        cout << endl;
+                        cout << "Card must be in your hand to guess" << endl;
+                        cout << "What are you looking for? (1 = Ace, 2-10, 11 = Jack, 12 = Queen, 13 = King)" << endl;
+                        cin >> guess;
+                        for (int i = 0; i < user.getHand().size(); ++i) {
+                            if (guess == user.getHand()[i].getRank()) {
+                                cardsInHand = true;
+                            }
+                        }
                     }
 
                     // append player's guess to computer's memory
@@ -369,8 +421,43 @@ int main () {
                 }
 
             } else if (computer.getTurn() == true && user.getTurn() == false) {
-                // pick a random card rank for computer
-                int randomRank = rand() % 13 + 1;
+                // check computer's memory to see if card is storeed, if so guess
+                // otherwise pick random number
+                int guess;
+                bool memory = false;
+                int memoryRank;
+
+                for (int i = 0; i < computer.getHand().size(); ++i) {
+                    for (int j = 0; j < computerMemory.size(); ++j) {
+                        if (computer.getHand()[i].getRank() == computerMemory[j]) {
+                            memoryRank = computer.getHand()[i].getRank();
+                            memory = true;
+                        }
+                    }
+                }
+
+                if (memory = true) {
+                    guess = memoryRank;
+                } else {
+                    // pick a random card rank for computer
+                    guess = rand() % 13 + 1;
+                }
+
+                // make sure card randomized is in computer's hand
+                cardsInHand = false;
+                for (int i = 0; i < computer.getHand().size(); ++i) {
+                    if (guess == computer.getHand()[i].getRank()) {
+                        cardsInHand = true;
+                    }
+                }
+                while (!cardsInHand) {
+                    guess = rand() % 13 + 1;
+                    for (int i = 0; i < computer.getHand().size(); ++i) {
+                        if (guess == computer.getHand()[i].getRank()) {
+                            cardsInHand = true;
+                        }
+                    }
+                }
 
                 // output file
                 if(outFile) {
@@ -383,7 +470,7 @@ int main () {
                     }
                     // output computer's guess
                     outFile << "======================" << endl;
-                    outFile << "Computer's Guess Rank: " << randomRank << endl;
+                    outFile << "Computer's Guess Rank: " << guess << endl;
                     outFile << "======================" << endl;
                 }
 
@@ -392,7 +479,7 @@ int main () {
                 vector<int> indexWhereCardsAre;
                 bool userHasCard = false;
                 for (int i = 0; i < user.getHand().size(); ++i) {
-                    if (user.getHand()[i].getRank() == randomRank) {
+                    if (user.getHand()[i].getRank() == guess) {
                         cardsWithThatRank.push_back(user.getHand()[i]);
                         indexWhereCardsAre.push_back(i);
                         userHasCard = true;
@@ -400,7 +487,7 @@ int main () {
                 }
 
                 if (userHasCard) {
-                    cout << "Computer guesses for card rank of " << randomRank << endl;
+                    cout << "Computer guesses for card rank of " << guess << endl;
                     cout << "You have " << cardsWithThatRank.size() << " of those cards" << endl;
                     cout << "They have been added to computer's hand, and taken from yours" << endl << endl;
 
@@ -423,9 +510,9 @@ int main () {
                     indexWhereCardsAre.clear();
                 } else {
                     cout << endl;
-                    cout << "Computer guessed card of rank " << randomRank << endl;
+                    cout << "Computer guessed card of rank " << guess << endl;
                     cout << "* computer went go fish *" << endl;
-                    if (deck.getDeck()[0].getRank() == randomRank) {
+                    if (deck.getDeck()[0].getRank() == guess) {
                         computer.addCard(deck.getDeck()[0]);
                         deck.removeTopCard();
                         cout << "Computer found card they were looking for, they go again!" << endl;
