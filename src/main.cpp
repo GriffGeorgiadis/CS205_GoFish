@@ -264,7 +264,6 @@ int main () {
                         deck.removeTopCard();
                         cout << "Computer found card they were looking for, they go again!" << endl;
                     } else {
-                        cout << "Computer picked up " << deck.getDeck()[0].toString() << endl << endl;
                         computer.addCard(deck.getDeck()[0]);
                         deck.removeTopCard();
                         user.setTurn(true);
@@ -517,7 +516,6 @@ int main () {
                         deck.removeTopCard();
                         cout << "Computer found card they were looking for, they go again!" << endl;
                     } else {
-                        cout << "Computer picked up " << deck.getDeck()[0].toString() << endl << endl;
                         computer.addCard(deck.getDeck()[0]);
                         deck.removeTopCard();
                         user.setTurn(true);
